@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { connectb } from "./config/db.js";
 import authRoutes from "./routes/auth.routes.js";
+import itemRoutes from "./routes/item.routes.js";
 import "./config/passport.js";
 import passport from "passport";
 
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/items", itemRoutes);
 
 // start server
 app.listen(PORT, () => {
