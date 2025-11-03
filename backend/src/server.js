@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { connectb } from "./config/db.js";
 import authRoutes from "./routes/auth.routes.js";
+import "./config/passport.js";
+import passport from "passport";
 
 // configs
 dotenv.config();
@@ -13,6 +15,7 @@ const app = express();
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
 
 // test route
 app.get("/", (req, res) => {

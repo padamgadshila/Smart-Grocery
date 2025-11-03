@@ -72,4 +72,4 @@ web/*.sln
 web/*.sw?
 
 
-backend/.env
+*.env
