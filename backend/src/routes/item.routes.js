@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.post("/", verifyToken, addItem);
+router.post("/add", verifyToken, addItem);
 router.get("/", verifyToken, getItems);
 router.put("/:id", verifyToken, updateItem);
 router.delete("/:id", verifyToken, deleteItem);

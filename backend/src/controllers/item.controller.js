@@ -4,7 +4,7 @@ export const addItem = async (req, res) => {
   try {
     const { name, quantity, category, reminderDate } = req.body;
     const item = await Item.create({
-      userId: req.user.id,
+      userId: req.user.userId,
       name,
       quantity,
       category,
@@ -18,7 +18,7 @@ export const addItem = async (req, res) => {
 
 export const getItems = async (req, res) => {
   try {
-    const items = await Item.find({ userId: req.user.id });
+    const items = await Item.find({ userId: req.user.userId });
     res.json(items);
   } catch (err) {
     res.status(500).json({ message: err.message });
